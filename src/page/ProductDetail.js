@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faShop } from '@fortawesome/free-solid-svg-icons'
-
 import { useDispatch, useSelector } from 'react-redux'
-import { productAction } from '../redux/actions/productAction'
+import { fetchProductDetail } from '../redux/reducers/productSlice'
 
 const ProductDetail = () => {
    let { id } = useParams()
-   // const [product, setProduct] = useState(null)
    const product = useSelector((state) => state.product.selectedItem)
-   // const [productOption, setProductOption] = useState([])
    const dispatch = useDispatch()
 
-   const getProductDetail = () => {
-      dispatch(productAction.getProductDetail(id))
+   const getProductDetail = async () => {
+      dispatch(fetchProductDetail(id))
    }
 
    useEffect(() => {
       getProductDetail()
-   }, [])
+   }, [id])
 
    return (
       <div className="productDetail-wrap">

@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { authenticateAction } from '../redux/actions/authenticateAction'
+import { fetchLogout } from '../redux/reducers/authenticateSlice'
 
 const Navbar = () => {
    const menuList = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M Home', 'Sale', '지속가능성']
@@ -21,7 +21,7 @@ const Navbar = () => {
       navigate('/login')
    }
    const goToLogout = () => {
-      dispatch(authenticateAction.logout())
+      dispatch(fetchLogout())
       navigate('/')
    }
    const openSearchBox = () => {

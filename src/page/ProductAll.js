@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import ProductCard from '../component/ProductCard'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useSearchParams } from 'react-router-dom'
-// import { productAction } from '../redux/actions/productAction'
 import { fetchProducts } from '../redux/reducers/productSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -13,8 +12,6 @@ const ProductAll = () => {
    const getProducts = () => {
       let searchQuery = query.get('q') || ''
       console.log('쿼리값은?', searchQuery)
-      // let url = `http://localhost:4000/products?q=${searchQuery}`
-      //dispatch(productAction.getProducts(searchQuery))
       dispatch(fetchProducts(searchQuery))
    }
    useEffect(() => {

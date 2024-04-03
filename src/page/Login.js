@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { authenticateAction } from '../redux/actions/authenticateAction'
+import { fetchLogin } from '../redux/reducers/authenticateSlice'
 
 const Login = ({}) => {
    const [id, setId] = useState('')
@@ -14,7 +14,7 @@ const Login = ({}) => {
    const loginUser = (event) => {
       event.preventDefault() //form 사용시 페이지 새로고침 방지
       console.log('login user function issue')
-      dispatch(authenticateAction.login(id, password))
+      dispatch(fetchLogin({ id, password }))
       navigate('/')
    }
 

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -25,12 +24,6 @@ import PrivateRoute from './route/PrivateRoute'
 //9 상품을  검색할 수 있다.
 
 function App() {
-   // const [authenticate, setAuthenticate] = useState(false) // true면 로그인이 됨 false면 로그인이 안됨
-
-   // useEffect(() => {
-   //    console.log('authenticate', authenticate)
-   // }, [authenticate])
-
    return (
       <div>
          <Navbar />
