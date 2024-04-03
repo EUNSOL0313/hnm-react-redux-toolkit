@@ -1,8 +1,8 @@
-# REACT 쇼핑몰 만들기
+# REACT 쇼핑몰 만들기 - redux-toolkit ver
 
 ## H&M 홈페이지만들기
 
-## URL : https://sol-hnm-react-project.netlify.app
+## URL : [https://sol-hnm-react-project.netlify.app](https://sol-hnm-reduxtoolkit.netlify.app/)
 
 ### USER Story
 1. 전체상품페이지, 로그인, 상품상세페이지.
